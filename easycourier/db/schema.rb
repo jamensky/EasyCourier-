@@ -10,11 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_19_010925) do
-
-  create_table "courries", force: :cascade do |t|
-    t.string "name"
-    t.string "keys_number"
-  end
+ActiveRecord::Schema.define(version: 0) do
 
 end

@@ -6,3 +6,12 @@ class CreateCourierTable < ActiveRecord::Migration[5.2]
     end
   end
 end
+
+
+courriers has many routes and many addresses through routes 
+
+addresses belong to courrier 
+
+routes has many add
+
+
