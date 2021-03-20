@@ -10,6 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2021_03_19_193244) do
+
+  create_table "addresses", force: :cascade do |t|
+    t.string "client_name"
+    t.string "first_line_of_address"
+    t.string "post_code"
+    t.string "contact"
+    t.string "reference"
+    t.string "note"
+  end
+
+  create_table "couriers", force: :cascade do |t|
+    t.string "name"
+    t.string "keys_number"
+  end
+
+  create_table "couriers_routes", force: :cascade do |t|
+    t.integer "courier_id"
+    t.integer "route_id"
+  end
+
+  create_table "routes", force: :cascade do |t|
+    t.string "name"
+    t.string "day"
+  end
 
 end
