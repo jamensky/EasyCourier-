@@ -1,6 +1,5 @@
-class Route < ActiveRecord::Base 
-   
-    has_many :couriers_routes
-    has_many :couriers, through: :couriers_routes
 
+class Route < ActiveRecord::Base 
+    has_many :addresses
+    belongs_to :courier
 end 
