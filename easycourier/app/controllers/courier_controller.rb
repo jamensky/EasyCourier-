@@ -1,7 +1,7 @@
 class CourierController < ApplicationController
 
-    get "/" do
-        
+    get "/couriers/index" do
+       
     end
 
 end 
