@@ -7,5 +7,6 @@ end
 #use Rack::MethodOverride
 
 run ApplicationController
+use AddressController
 use CourierController
 use RouteController 

@@ -1,7 +1,8 @@
 class AddressController < ApplicationController
-
-  get '/addresses' do 
-    'hello'
+  
+  post '/addresses' do 
+    @all_addresses = Address.all 
+    
   end 
-
+  
 end 
