@@ -10,5 +10,11 @@ class ApplicationController < Sinatra::Base
   get '/' do
     erb :"application/app_index"
   end
+
+  post '/route_to' do 
+    if params.keys[0] == "couriers"
+      redirect "couriers/index"
+    end 
+  end 
  
 end
