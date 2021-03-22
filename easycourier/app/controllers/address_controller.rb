@@ -1,8 +1,7 @@
-class AddressController < ActiveRecord::Base 
+class AddressController < ApplicationController
 
-  get '/addresses/index' do 
-    @all_addresses = Adress.all
-    erb 'addresses/index'
+  get '/addresses' do 
+    'hello'
   end 
 
 end 
