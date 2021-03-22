@@ -12,9 +12,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/route_to' do 
-    if params.keys[0] == "couriers"
-      redirect "couriers/index"
-    end 
+      redirect "/#{params.keys[0]}"
   end 
  
 end
