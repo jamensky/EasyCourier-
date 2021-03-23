@@ -11,8 +11,7 @@ class CourierController < ApplicationController
         end 
 
         get '/schedule' do
-          
-            
+            binding.pry 
           erb :'couriers/schedule'
         end 
       

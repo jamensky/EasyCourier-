@@ -5,6 +5,4 @@ class Helper < ActiveRecord::Base
   end 
 
 
-  
-
 end 
