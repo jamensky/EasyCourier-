@@ -1,5 +1,6 @@
 class CourierController < ApplicationController
-  
+         
+     
         get '/couriers' do 
           @couriers = Courier.all 
             if @couriers.empty? 

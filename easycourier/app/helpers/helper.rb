@@ -1,8 +1,10 @@
 class Helper < ActiveRecord::Base
 
-  def route_adress(param)
-    
-  end
+  def find_user(user)
+    Courier.find_by_id(user.id)
+  end 
 
+
+  
 
 end 
