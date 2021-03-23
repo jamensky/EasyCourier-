@@ -29,13 +29,21 @@ class ApplicationController < Sinatra::Base
     erb :'/application/sign_up'
   end  
 
-  get '/sign_up' do 
-    'sign up here'
+  post '/sign_up' do 
+    @user = Courier.new(params)
+    @user.save
+      session[:id] = @user.id 
+    erb :'application/app_index'
   end 
 
   post '/route_to' do 
       redirect "/#{params.keys[0]}"
   end 
+
+  get '/logout' do
+    session.clear
+    redirect '/'
+  end
  
 end
 
