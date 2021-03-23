@@ -9,6 +9,12 @@ class CourierController < ApplicationController
               erb :'couriers/index'
             end 
         end 
+
+        get '/schedule' do
+          
+            
+          erb :'couriers/schedule'
+        end 
       
         get '/couriers/new' do 
           erb :'couriers/new'
@@ -40,8 +46,10 @@ class CourierController < ApplicationController
         end
       
         delete 'couriers/:id' do 
-           @courier = Courier.find_by_id(params[:id])
-           #@courier.clear
-        end 
+           @courier = Courier.find_by_id(session[:id])
+           @courier.delete
+           session.clear
+           redirect '/'
+        end   
       
 end 

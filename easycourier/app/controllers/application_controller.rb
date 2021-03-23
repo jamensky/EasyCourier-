@@ -21,7 +21,7 @@ class ApplicationController < Sinatra::Base
     else 
       @user = Courier.find_by_id(params[:id])
       session[:id] = @user.id 
-      redirect "/couriers/#{@user.id}"
+      erb :"/application/app_index"
     end 
   end 
 
@@ -29,11 +29,16 @@ class ApplicationController < Sinatra::Base
     erb :'/application/sign_up'
   end  
 
-  post '/sign_up' do 
-    @user = Courier.new(params)
-    @user.save
+  post '/sign_up' do
+    if params[:password].empty? || params[:user_name].empty?
+      erb :'application/sign_up'
+    else 
+      @user = Courier.new(params)
+      @user.save
       session[:id] = @user.id 
-    erb :'application/app_index'
+
+      erb :'application/app_index'
+    end 
   end 
 
   post '/route_to' do 
