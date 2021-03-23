@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+
+<h1>You are Editing <%=@courier.user_name%></h1>
+
+
+<form method="post" action="/couriers/<%=@courier.id%>">
+  <input type="hidden" name="_method" value="patch">  
+
+    <input type="text" name=user_name value="<%=@courier.user_name%>">
+    <br></br>
+    <input type="text" name=keys_number value="<%=@courier.keys_number%>">
+    <br></br>
+
+  <input type="submit" value="Submit">
+</form>

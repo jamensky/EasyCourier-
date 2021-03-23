@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+<h1><%=@courier.user_name%></h1>
+  <p>Vehicle keys number: <%=@courier.keys_number%></p>
+<br></br>
+
+<a class="button" href="/couriers/<%=@courier.id%>/edit">Edit Courier</a>
+<br></br>
+<a class="button" href="/">Main Menu</a>
+
+<br></br>
+
+<form method="post" action="/couriers/<%=@courier.id%>">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="DELETE"> 
+</form>

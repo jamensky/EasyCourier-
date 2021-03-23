@@ -2,7 +2,6 @@ class AddressController < ApplicationController
   
   get '/addresses' do 
     @all_addresses = Address.all 
-    #binding.pry 
       if @all_addresses.empty? 
         erb :'addresses/error'
       else 
@@ -39,6 +38,7 @@ class AddressController < ApplicationController
        @address_to_edit.note = params[:note]
 
     @address_to_edit.save
+    #inding.pry
     
     redirect "/addresses/#{params[:id]}"
   end

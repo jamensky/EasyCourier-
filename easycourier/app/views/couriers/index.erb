@@ -1,0 +1,15 @@
+<h1>Here are all the couriers:</h1>
+
+<%@couriers.each do |courier|%>
+   <ul> 
+     <li><a href="/couriers/<%=courier.id%>"><%=courier.user_name%></a></li>
+   </ul>
+<%end%>
+
+  <br></br>
+  
+<a href="/couriers/new">Click here to create a new courier.</a>
+  <br></br>
+<a href="/">Or return to the main page.
+
+

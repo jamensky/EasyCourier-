@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+
+<h1>You are Editing <%=@route.name%></h1>
+
+
+<form method="post" action="/routes/<%=@route.id%>">
+  <input type="hidden" name="_method" value="patch">  
+
+    <input type="text" name=name value="<%=@route.name%>">
+    <br></br>
+    <input type="text" name=days value="<%=@route.days%>">
+    <br></br>
+
+  <input type="submit" value="Submit">
+</form>
