@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<h1>You are Editing <%=@address.client_name%></h1>
+
+<form method="post" action="addresses/<%=@address.id%>">
+  <input type="hidden" name="_method" value="patch">
+    <input type="text" value="<%=@address.client_name%>">
+    <br></br>
+    <input type="text" value="<%=@address.first_line_of_address%>">
+    <br></br>
+    <input type="text" value="<%=@address.post_code%>">
+    <br></br>
+    <input type="text" value="<%=@address.contact%>">
+    <br></br>
+    <input type="text" value="<%=@address.reference%>">
+    <br></br>
+    <input type="text" value="<%=@address.note%>">
+    <br></br>
+
+  <input type="submit" value="Submit">
+</form>

@@ -1,1 +1,15 @@
-<h1>welcome to adddresses</h1>
+<h1>Here are all the clients we have:</h1>
+
+<%@all_addresses.each do |address|%>
+   <ul> 
+     <li><a href="/addresses/<%=address.id%>"><%=address.client_name%></a></li>
+   </ul>
+<%end%>
+
+  <br></br>
+  
+<a href="/addresses/new">Click here to create a new address.</a>
+  <br></br>
+<a href="/">Or return to the main page.
+
+
