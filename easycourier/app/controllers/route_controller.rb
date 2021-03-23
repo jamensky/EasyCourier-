@@ -1,6 +1,4 @@
 class RouteController < ApplicationController
-
-    class CourierController < ApplicationController
   
         get '/routes' do 
           @routes = Route.all 
@@ -47,4 +45,3 @@ class RouteController < ApplicationController
       
 end 
    
-end 

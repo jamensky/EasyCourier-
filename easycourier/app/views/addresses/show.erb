@@ -6,6 +6,8 @@
   <p>Contact: <%=@address.contact%></p>
   <p>Reference: <%=@address.reference%></p>
   <p>Notes: <%=@address.note%></p>
+  <p>Route: <%=Route.find_by_id(@address.route_id).name%>
+<br></br>
 <br></br>
 
 <a class="button" href="/addresses/<%=@address.id%>/edit">Edit Address</a>

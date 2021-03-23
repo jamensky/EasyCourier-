@@ -15,6 +15,9 @@ class AddressController < ApplicationController
 
   post '/addresses/new' do 
     @address = Address.create(params)
+
+#binding.pry 
+
     erb :'addresses/show'
   end 
 

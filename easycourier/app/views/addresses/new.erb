@@ -22,6 +22,15 @@
   <label for="note">Note: </label>
   <input type="text" id="note" name="note">
   <br></br>
+
+  <h2>Assign this destination to a route:</h2>
+
+    <% Route.all.each do |route| %>
+      <label><%= route.name %></label>
+      <input type="checkbox" id="route_<%=route.id%>" name="route_id" value="<%= route.id %>"><br>
+    <%end%>
+
+  <br></br>
   
    <input type="submit" value="Submit">
 
