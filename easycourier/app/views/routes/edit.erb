@@ -11,5 +11,13 @@
     <input type="text" name=day value="<%=@route.day%>">
     <br></br>
 
+  <h2>Assign destinations to this route</h2>
+   <% Address.all.each do |address| %>
+      <label><%= address.client_name %></label>
+      <input type="checkbox" id="address_<%=address.id%>" name="route_id" value="<%= address.id %>"><br>
+   <%end%>
+
+   <br></br>
+
   <input type="submit" value="Submit">
 </form>

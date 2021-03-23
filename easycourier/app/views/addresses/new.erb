@@ -24,12 +24,16 @@
   <br></br>
 
   <h2>Assign this destination to a route:</h2>
+    
+  <h3>Select existing route</h3>
 
     <% Route.all.each do |route| %>
       <label><%= route.name %></label>
       <input type="checkbox" id="route_<%=route.id%>" name="route_id" value="<%= route.id %>"><br>
     <%end%>
-
+    
+    <br></br>
+    <a href="/routes/new">If you cannot find a route, click here to create a new route first.</a>
   <br></br>
   
    <input type="submit" value="Submit">

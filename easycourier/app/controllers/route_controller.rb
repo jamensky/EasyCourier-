@@ -40,7 +40,9 @@ class RouteController < ApplicationController
       
         delete 'routes/:id' do 
            @route = Route.find_by_id(params[:id])
-           #@courier.clear
+           @route.delete
+
+           redirect '/routes'
         end 
       
 end 

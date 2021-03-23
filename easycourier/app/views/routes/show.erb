@@ -5,8 +5,10 @@
 
 <br></br>
 
- <h2>Destinations: </h2>
- <%@%>
+  <h2>Destinations: </h2>
+    <%@route.addresses.each do |address|%>
+      <li><a href='/addresses/<%=address.id%>'><%=address.client_name%></a></li>
+    <%end%>
 
 <br></br>
 

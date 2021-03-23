@@ -15,9 +15,6 @@ class AddressController < ApplicationController
 
   post '/addresses/new' do 
     @address = Address.create(params)
-
-#binding.pry 
-
     erb :'addresses/show'
   end 
 
@@ -41,14 +38,15 @@ class AddressController < ApplicationController
        @address_to_edit.note = params[:note]
 
     @address_to_edit.save
-    #inding.pry
     
     redirect "/addresses/#{params[:id]}"
   end
 
-  delete 'addresses/:id' do 
+  delete '/addresses/:id' do 
      @address = Address.find_by_id(params[:id])
-     #@address_to_delete.clear
+     @address.delete
+
+     redirect '/addresses'
   end 
 
 end 

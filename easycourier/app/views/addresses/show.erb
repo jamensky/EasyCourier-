@@ -6,7 +6,7 @@
   <p>Contact: <%=@address.contact%></p>
   <p>Reference: <%=@address.reference%></p>
   <p>Notes: <%=@address.note%></p>
-  <p>Route: <%=Route.find_by_id(@address.route_id).name%>
+  <p>Route: <a href='/routes/<%=@address.route.id%>'><%=@address.route.name%></a><p>
 <br></br>
 <br></br>
 
