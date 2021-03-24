@@ -13,8 +13,9 @@ A route and address management system to help couriers complete their deliveries
    - cd into the relevant root directory   
    - press enter    
    - cd easycourier- (make sure to include the dash (-) at the end of easycourier)
-   
-4. And finally, run shotgun in your terminal and follow the given link to the browser page where you will be greeted with the EasyCourier sign in page. 
+  
+4. Run bundle install  
+5. And finally, run shotgun in your terminal and follow the given link to the browser page where you will be greeted with the EasyCourier sign in page. 
 
 
 **EASY COURIER FEATURES:**
