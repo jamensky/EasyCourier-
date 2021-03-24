@@ -1,7 +1,7 @@
 class Helper < ActiveRecord::Base
 
-  def find_user(user)
-    Courier.find_by_id(user.id)
+  def self.validate_user(user)
+    @user = Courier.find_by(user_name: user[:user_name])
   end 
 
 

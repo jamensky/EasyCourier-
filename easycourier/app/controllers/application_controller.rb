@@ -7,7 +7,7 @@ class ApplicationController < Sinatra::Base
     set :public_folder, 'public'
     set :views, 'app/views'
 
-    enable :sessions
+    enable :sessions unless test?
     secret = SecureRandom.base64(12)
     set :session_secret, secret
   end
@@ -17,14 +17,15 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/login' do 
-    @user = Courier.find_by_id(params[:id])
-    if params[:password].empty? || params[:user_name].empty?
+    @user = Courier.find_by(user_name: params[:user_name]) 
+    
+    if params[:password].empty? || params[:user_name].empty? && !params[:password] == @user.password
       erb :'/application/error'
-    elsif @user 
+    elsif @user
       session[:id] = @user.id 
       erb :"/application/app_index"
     else 
-      erb :'application/error'
+      erb :'/application/error'
     end 
   end 
 
@@ -36,11 +37,10 @@ class ApplicationController < Sinatra::Base
     if params[:password].empty? || params[:user_name].empty?
       erb :'application/sign_up'
     else 
+      binding.pry 
       @user = Courier.new(params)
-      
       @user.save
       session[:user_id] = @user.id
-      
 
       erb :'application/app_index'
     end 
