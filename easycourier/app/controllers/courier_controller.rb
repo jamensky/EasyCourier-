@@ -25,6 +25,7 @@ class CourierController < ApplicationController
       
         get '/couriers/:id' do
           @courier = Courier.find_by_id(params[:id])
+          session[:user_id] = @courier.id 
           erb :'couriers/show'
         end
       
