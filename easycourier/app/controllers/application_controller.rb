@@ -37,7 +37,6 @@ class ApplicationController < Sinatra::Base
     if params[:password].empty? || params[:user_name].empty?
       erb :'application/sign_up'
     else 
-      binding.pry 
       @user = Courier.new(params)
       @user.save
       session[:user_id] = @user.id

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_20_211216) do
+ActiveRecord::Schema.define(version: 2021_03_24_022609) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "client_name"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2021_03_20_211216) do
 
   create_table "couriers", force: :cascade do |t|
     t.string "user_name"
-    t.string "password"
+    t.string "password_digest"
     t.string "keys_number"
   end
 
