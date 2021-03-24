@@ -5,7 +5,7 @@
 <h1>Welcome To EasyCourier!</h1>
 
  <form method="post" action= "/route_to">
-  
+  <%=session[:user_id]%>
     <h2>Let's take you aroud the website! What would you like to view?</h2>
      <label for="couriers">View all couriers</label>
      <input type="checkbox" name=couriers id="couriers">
@@ -20,8 +20,8 @@
      <input type="checkbox" name=schedule id="schedule">
       <br></br>
      <input type="submit" value="Submit">
-     
-
+     <br></br>
+     <a href="/logout">Log out</a>
   </form>
 
 </html>

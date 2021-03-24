@@ -3,8 +3,9 @@
 
 <h1>Welcome To EasyCourier LogIn Page!</h1>
 <br></br>
-<form type='post' action='/login'>
+<%=session[:user_id]%>
 
+<form method='post' action='/login'>
   <label for='user_name'>Enter user name: </label>
    <input type='text' id='user_name' name=user_name>
   <br></br>

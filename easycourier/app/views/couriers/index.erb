@@ -1,6 +1,7 @@
 <h1>Here are all the couriers:</h1>
 
 <%@couriers.each do |courier|%>
+<h2>Click on the a courier to see what round they are doing.</h2>
    <ul> 
      <li><a href="/couriers/<%=courier.id%>"><%=courier.user_name%></a></li>
    </ul>
@@ -8,6 +9,6 @@
 
   <br></br>
   
-<a href="/">Return to the main page.
+<a href="application/app_index">Return to the main page.</a>
 
 

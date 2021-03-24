@@ -1,6 +1,5 @@
 class CourierController < ApplicationController
-         
-     
+              
         get '/couriers' do 
           @couriers = Courier.all 
             if @couriers.empty? 
@@ -11,7 +10,7 @@ class CourierController < ApplicationController
         end 
 
         get '/schedule' do
-            binding.pry 
+            #binding.pry 
           erb :'couriers/schedule'
         end 
       
