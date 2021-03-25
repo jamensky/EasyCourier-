@@ -10,7 +10,8 @@ class CourierController < ApplicationController
         end 
 
         get '/schedule' do
-            #binding.pry 
+          binding.pry 
+          @courier = Courier.find_by_id(session[:user_id])
           erb :'couriers/schedule'
         end 
       
