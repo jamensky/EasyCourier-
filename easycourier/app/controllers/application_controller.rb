@@ -21,6 +21,7 @@ class ApplicationController < Sinatra::Base
     erb :'application/app_index'
   end 
 
+
   post '/login' do
     @user = Courier.find_by(user_name: params[:user_name])
 
@@ -31,7 +32,7 @@ class ApplicationController < Sinatra::Base
     end 
   end 
 
-  
+
   get '/sign_up' do 
     erb :'/application/sign_up'
   end  
@@ -47,9 +48,11 @@ class ApplicationController < Sinatra::Base
     end 
   end 
 
+  
   post '/route_to' do #session user_id gets lost at this point
       redirect "/#{params.keys[0]}"
   end 
+
 
   get '/logout' do
     session.clear

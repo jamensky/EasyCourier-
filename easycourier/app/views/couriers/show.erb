@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 
 <h1><%=@courier.user_name%></h1>
-  <p>Vehicle keys number: <%=@courier.keys_number%></p>
+  <h3>Vehicle keys number: <%=@courier.keys_number%></h3>
+
 <br></br>
 
-<a class="button" href="/couriers/<%=@courier.id%>/edit">Edit Courier</a>
+   <a class="button" href="/couriers/<%=@courier.id%>/edit">Edit Courier</a>
+
 <br></br>
-<a class="button" href="/">Main Menu</a>
+
+   <a class="button" href="/application/app_index">Main Menu</a>
 
 <br></br>
 

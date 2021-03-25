@@ -34,7 +34,8 @@ class CourierController < ApplicationController
            erb :'couriers/edit'
         end 
       
-        patch '/couriers/:id' do 
+        patch '/couriers/:id' do
+          #validate session user is before allowing courier editing 
            @courier = Courier.find_by_id(params[:id])
              @courier.user_name = params[:user_name]
              @courier.keys_number = params[:keys_number]
