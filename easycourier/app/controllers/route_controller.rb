@@ -14,8 +14,12 @@ class RouteController < ApplicationController
         end 
       
         post '/routes/new' do 
-          @route = Route.create(params)
-          erb :'routes/show'
+          @route = Route.create(name: params[:name], day: params[:day])
+          #binding.pry
+          if params[:address_id] 
+            @route.addresses << Address.find_by_id(params[:address_id])
+          end  
+            erb :'routes/show'
         end 
       
         get '/routes/:id' do
@@ -38,7 +42,7 @@ class RouteController < ApplicationController
           redirect "/routes/#{params[:id]}"
         end
       
-        delete 'routes/:id' do 
+        delete '/routes/:id' do 
            @route = Route.find_by_id(params[:id])
            @route.delete
        

@@ -6,7 +6,13 @@
   <p>Contact: <%=@address.contact%></p>
   <p>Reference: <%=@address.reference%></p>
   <p>Notes: <%=@address.note%></p>
+
+<%if @address.route%>
   <p>Route: <a href='/routes/<%=@address.route.id%>'><%=@address.route.name%></a><p>
+<%else%>
+  <p>This address has not been assigned to a route.</p>
+<%end%> 
+
 <br></br>
 <br></br>
 

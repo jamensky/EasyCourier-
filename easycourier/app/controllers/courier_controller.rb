@@ -7,13 +7,7 @@ class CourierController < ApplicationController
             else 
               erb :'couriers/index'
             end 
-        end 
-
-        get '/schedule' do
-          binding.pry 
-          @courier = Courier.find_by_id(session[:user_id])
-          erb :'couriers/schedule'
-        end 
+        end
       
         get '/couriers/new' do 
           erb :'couriers/new'
