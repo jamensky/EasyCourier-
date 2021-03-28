@@ -32,8 +32,8 @@ class RouteController < ApplicationController
            @route = Route.find_by_id(params[:id])
              @route.name = params[:name]
              @route.day = params[:day]
-      
-          @route.save
+             @route.addresses << Address.find_by_id(params[:address_id])
+             @route.save
           
           redirect "/routes/#{params[:id]}"
         end
@@ -41,7 +41,7 @@ class RouteController < ApplicationController
         delete 'routes/:id' do 
            @route = Route.find_by_id(params[:id])
            @route.delete
-
+       
            redirect '/routes'
         end 
       

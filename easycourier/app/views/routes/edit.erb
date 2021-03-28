@@ -14,7 +14,7 @@
   <h2>Assign destinations to this route</h2>
    <% Address.all.each do |address| %>
       <label><%= address.client_name %></label>
-      <input type="checkbox" id="address_<%=address.id%>" name="route_id" value="<%= address.id %>"><br>
+      <input type="checkbox" id="address_<%=address.id%>" name="address_id" value="<%= address.id %>"><br>
    <%end%>
 
    <br></br>
