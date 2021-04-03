@@ -1,8 +1,14 @@
 <h1>Here are all the clients we have:</h1>
 
+
 <%@all_addresses.each do |address|%>
    <ul> 
-     <li><a href="/addresses/<%=address.id%>"><%=address.client_name%></a></li>
+     <li><a href="/addresses/<%=address.id%>"><%=address.client_name%></a>
+      <form method='post' action='/delete/<%address.id%>'>
+        <input type="hidden" name="_method" value="delete">
+      <input type='submit' value="Delete">
+      </form>
+     </li>
    </ul>
 <%end%>
 
